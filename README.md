@@ -1,6 +1,7 @@
 # Open-Weather Ediflo Test
 
 This small application gets a user's location and a user-supplied city and displays general differeneces in the weather.
+Here is a live link: https://thirsty-ardinghelli-c0f9a2.netlify.app/
 
 ## The App
 It takes in the user's longitude and lattitude and returns the weather based on their position. This is an API call to OpenWeather using the coordinates taken from the user. 
