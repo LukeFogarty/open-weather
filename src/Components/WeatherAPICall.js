@@ -8,16 +8,20 @@ export const  SearchWeatherByCity = () => {
   const key = "d0ef4a0b1cda51765749cc929aabd66e";
   const [searchTerm, setSearchTerm] = useState("");
   const [searching, setSearching] = useState(false);
-  const {weather, setWeather} = useContext(WeatherContext);
+  const {weather, setWeather, setNotFound} = useContext(WeatherContext);
 
   const fetchSearchedCity =() =>{
     setWeather([weather[0],undefined]);
+    setNotFound("");
     if (searching === false){
       setSearching(true);
       let url = `https://api.openweathermap.org/data/2.5/weather?q=${searchTerm}&appid=${key}`;
-      fetch(url).then(result => {
-        //get our data and return as json
-        return result.json();
+      fetch(url).then(response => {
+        //get our data and return as json if all is okay
+        if (response.ok) {return response.json();}
+        else{ 
+          throw new Error('The city does not exist. Bad request!');
+        }
       }).then(json => {  
         if (("message" in json) ){
           //nothing happens if the error 'message' is found in our returned data, so display 'loading'
@@ -27,6 +31,9 @@ export const  SearchWeatherByCity = () => {
           setWeather([weather[0],json]);
         }
         setSearching(false);
+      }).catch(error => {
+        setSearching(false);
+        setNotFound("No city found by that name. Please try another...");
       })
     }
   }

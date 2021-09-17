@@ -32,6 +32,10 @@ button{/*Edited button tag*/
 button:active{/*What happens to a button when presed*/
     background-color: #0c1642;
 }
+button:disabled{/*What happens to a button when presed*/
+    color: #585d71;
+    background-color: #dad9d9;
+}
 .main{/*the setup class for the application*/
     display: grid;
     place-items: center;

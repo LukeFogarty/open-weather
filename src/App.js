@@ -10,13 +10,15 @@ import './App.css';
 
 function App() {
 const [weather, setWeather] = useState([undefined,undefined]);
-const value = { weather, setWeather};
+const [notFound, setNotFound] = useState("");
+const value = { weather, setWeather, notFound, setNotFound};
 
   return (//WeatherContext creates global variables, makes it handy for passing certain data around, such as our weather details
     <div className="main">
     <WeatherContext.Provider value={value}>
       <LogoDisplay/>
-      <b style={{"color":"#000000", "font-weight": "400" }}>ediflo<b style={{"color":"#dad9d9"}}>weather</b></b>
+      <b style={{"color":"#000000", "fontWeight": "400" }}>ediflo<b style={{"color":"#dad9d9"}}>weather</b></b>
+      <sup style={{"color":"#dad9d9", "fontSize": "12pt" }}>{notFound}</sup>
       <SearchWeatherByCity/><br/> 
       <div >
         <WeatherByLocation/>
