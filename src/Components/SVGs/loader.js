@@ -1,5 +1,5 @@
 export const Loader = (props) =>{
-//a cloud shape for loading purposes
+//a cloud outline shape for loading purposes
 return <svg x="0px" y="0px" width="160px" height="120px" viewBox="0 0 120 80" >
 <path fill="none" stroke="#FFFFFF" strokeWidth="4" strokeMiterlimit="10" d="M112.927,54.209
 c0,8.03-3.174,10.645-17.144,10.834L28,65c-12.726,0-15.035-5.763-15.181-8.936c-0.747-16.246,17.698-11.563,17.698-11.563

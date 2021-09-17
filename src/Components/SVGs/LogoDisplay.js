@@ -1,5 +1,5 @@
 export const LogoDisplay = () => {
-    //this returns a small loading graphic and add
+    //this is the logo, with minor animated actions for fun
     return (
         <div> 
             <div >

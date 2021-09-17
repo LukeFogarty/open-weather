@@ -1,10 +1,11 @@
 
 export const WaitingDisplay = () => {
-    //this returns a small loading graphic and add
+    //this returns a small loading graphic and adds animation while two cities have not been selected
     return (
         <div className="compareCard"> 
             <div>
-            <svg x="0px" y="0px" width="160px" height="120px" viewBox="0 0 120 80">
+            {/* Added the svg here as it kept giving errors otherwise */}
+            <svg x="80px" y="60px" width="160px" height="120px" viewBox="0 0 120 80">
                 <circle className={"loaderPoint1"} fill="none" stroke="#0C1642" strokeWidth="2" strokeMiterlimit="10" cx="37.167" cy="36.833" r="3.548"/>
                 <g>
                     <path fill="#F2F2F2" d="M22.428,69.29c0,0-0.008-0.429-0.022-1.233c0.031-0.806-0.103-1.971,0.13-3.487

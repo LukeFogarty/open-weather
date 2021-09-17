@@ -1,7 +1,9 @@
 import { useState, useContext } from "react";
 import { WeatherContext } from './Context/GlobalState';
 import '../App.css';
+
 export const  WeatherComparer = (props) => {
+    //this uses context to update once there are two cities to compare, and then allows for toggling betweeen some stats
     const { weather } = useContext(WeatherContext);
     const [temp, setTemperature] = useState([Math.round(weather[0].main.temp-273.15),Math.round(weather[1].main.temp-273.15)]);
     const [humidity,setHumidity] = useState([Math.round(weather[0].main.humidity),Math.round(weather[1].main.humidity)]);
@@ -40,7 +42,6 @@ export const  WeatherComparer = (props) => {
                 setShowing("Temperature");
         }
     }
-
     
     if (weather[0] !== undefined && weather[1] !== undefined){
         return (

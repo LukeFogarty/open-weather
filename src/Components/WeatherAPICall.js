@@ -5,12 +5,14 @@ import {LoadingDisplay} from "../Components/LoadingDisplay"
 
 //this gets the weather from an input city name
 export const  SearchWeatherByCity = () => {
-  const key = "d0ef4a0b1cda51765749cc929aabd66e";
+  //this is the search bar. 
+  const key = "d0ef4a0b1cda51765749cc929aabd66e"; //The API key
   const [searchTerm, setSearchTerm] = useState("");
   const [searching, setSearching] = useState(false);
   const {weather, setWeather, setNotFound} = useContext(WeatherContext);
 
   const fetchSearchedCity =() =>{
+    //set weather as undefined when you click the search bar
     setWeather([weather[0],undefined]);
     setNotFound("");
     if (searching === false){
@@ -19,7 +21,7 @@ export const  SearchWeatherByCity = () => {
       fetch(url).then(response => {
         //get our data and return as json if all is okay
         if (response.ok) {return response.json();}
-        else{ 
+        else{ //throw error if not okay
           throw new Error('The city does not exist. Bad request!');
         }
       }).then(json => {  
@@ -31,7 +33,7 @@ export const  SearchWeatherByCity = () => {
           setWeather([weather[0],json]);
         }
         setSearching(false);
-      }).catch(error => {
+      }).catch(error => { //reset the search bar, and display error message
         setSearching(false);
         setNotFound("No city found by that name. Please try another...");
       })

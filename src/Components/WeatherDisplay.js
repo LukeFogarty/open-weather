@@ -2,6 +2,7 @@ import { useState } from "react";
 import '../App.css';
 
 export const  WeatherDisplay = (props) => {
+    //this handles how the weaher is displayed once it is found
     const city = props.weatherData.name+", "+props.weatherData.sys.country;
     const icon = `https://openweathermap.org/img/wn/${props.weatherData.weather[0].icon}@2x.png`; //get the weather icon from the API
     const [temp, setTemperature] = useState(Math.round(props.weatherData.main.temp-273.15));
@@ -9,6 +10,10 @@ export const  WeatherDisplay = (props) => {
     const humidity = props.weatherData.main.humidity;
     const description = props.weatherData.weather[0].description;
     const [tempType,setTempType] = useState("°C");
+    //get the time in the city, multiply by 1000 for milliseconds
+    const date = new Date((props.weatherData.dt)*1000);
+    const hours =date.getHours();
+    const minutes =date.getMinutes();
 
     function changeTemperature(){
         //this changes the displayed temperature between celsius and farenheit
@@ -32,7 +37,7 @@ export const  WeatherDisplay = (props) => {
             <div>
                 <span className="heading grow">{city}</span><br/>
                 <p className="description">
-                    <span  className="subheading" >{description}</span>
+                    <span className="subheading"><b className="grow">{hours}:{minutes} |</b> {description}</span>
                     Humidity: {humidity}%<br/>
                     Wind: {(tempType === "°C")? Math.round(wind*3.6)+"kmh" : Math.round(wind*2.237)+"mph"}
                 </p>

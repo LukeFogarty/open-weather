@@ -1,3 +1,4 @@
+/*the css tags and classes*/
 
 b{/*Edited bold class*/
     font-weight: bold;
@@ -29,10 +30,10 @@ button{/*Edited button tag*/
     border-radius: 0px 5px 5px 0px;
     color: #ffffff;
 }
-button:active{/*What happens to a button when presed*/
+button:active{/*What happens to a button when pressed*/
     background-color: #0c1642;
 }
-button:disabled{/*What happens to a button when presed*/
+button:disabled{/*What happens to a button when disabled*/
     color: #585d71;
     background-color: #dad9d9;
 }
@@ -64,10 +65,10 @@ button:disabled{/*What happens to a button when presed*/
 
 .weatherCard{/*the weather card class. This is displays the weather details for a city*/
     display: flex;
-    padding: 8px 32px 12px 32px;
+    padding: 8px 18px 12px 18px;
     border-radius: 20px;
     margin-top: 0px;
-    width: 285px;
+    width: 305px;
     height: 170px;
     text-transform: capitalize;
     background-color: #f2f2f2;
@@ -85,9 +86,9 @@ button:disabled{/*What happens to a button when presed*/
 .loadingCard{/*the loading card class. This is displayed while searching for a city*/
     display: grid;
     place-items: center;
-    padding: 0px 30px 10px 30px;
+    padding: 0px 18px 10px 18px;
     border-radius: 20px;
-    width: 285px;
+    width: 305;
     height: 170px;
     text-transform: capitalize;
     background-color: #f2f2f2;
