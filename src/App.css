@@ -1,38 +1,167 @@
-.App {
-  text-align: center;
+
+b{/*Edited bold class*/
+    font-weight: bold;
+    color: #585d71;
+}
+input{/*Edited input bar tag*/
+    background-color: #dad9d9;
+    color: #0c1642;
+    width: 100px;
+    padding: 4px 8px;
+    margin-top: 12px;
+    font-family: 'Roboto', sans-serif;
+    border: none;
+    border-radius: 5px 0px 0px 5px;
+    transition: all .2s ease-in; 
+}
+input:focus{/*What happens to the search bar when selected*/
+    background-color: #585d71;
+    width: 200px;
+    border: none;
+    color: #ffffff;
+    outline: none;
+}
+button{/*Edited button tag*/
+    background-color: #0b25e5;
+    padding: 4px 8px;
+    font-family: 'Roboto', sans-serif;
+    border: none;
+    border-radius: 0px 5px 5px 0px;
+    color: #ffffff;
+}
+button:active{/*What happens to a button when presed*/
+    background-color: #0c1642;
+}
+.main{/*the setup class for the application*/
+    display: grid;
+    place-items: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14pt;
+    background-color: #ffffff; 
+} 
+.description{/*the small text under the city name*/
+    margin-top: 10px;
+    margin-bottom: -24px;
+} 
+.heading{/*heading class for city name and temperature*/
+    font-size: 17pt;
+    display: block;
+    color: #585d71;
+    margin-top: 6px;
+    margin-bottom: -24px;
+    font-weight: bold;
+}
+.subheading{ /*subheading class for weather comparison text and weather description*/
+    font-size: 14pt;
+    display: block;
+    margin-bottom: 6px;
+    font-weight: thin;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.weatherCard{/*the weather card class. This is displays the weather details for a city*/
+    display: flex;
+    padding: 8px 32px 12px 32px;
+    border-radius: 20px;
+    margin-top: 0px;
+    width: 285px;
+    height: 170px;
+    text-transform: capitalize;
+    background-color: #f2f2f2;
+    user-select: none;
+    transition: all .1s ease-in; 
+}
+.weatherCard:hover { transform: scale(1.02);}
+.skyCircle{/*this is the background for the icon*/
+    display: grid;
+    border-radius: 100px;
+    font-family: 'Roboto', sans-serif;
+    background-color: #dad9d9;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.loadingCard{/*the loading card class. This is displayed while searching for a city*/
+    display: grid;
+    place-items: center;
+    padding: 0px 30px 10px 30px;
+    border-radius: 20px;
+    width: 285px;
+    height: 170px;
+    text-transform: capitalize;
+    background-color: #f2f2f2;
+    user-select: none;
+    transition: all .1s ease-in; 
+}
+.loadingCard:hover { transform: scale(1.02);}
+
+.loader {
+    /*This controls the stroke animation on the loading cloud. 
+    The keyframe is what it is heading towards before it resets*/
+    stroke-dasharray: 50;
+    animation: loadingCloud 10s infinite ease-in-out;
+}
+@keyframes loadingCloud {
+ to {stroke-dashoffset: 1000;}
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.loaderPoint1 {
+    /*This controls the point animation on the loading planet.*/
+    opacity: 0;
+    animation: loadingPoint 1.5s infinite ease-in-out;
+    animation-direction: alternate;
+}
+.loaderPoint2 {
+    /*This controls the point animation on the loading planet.*/
+    opacity: 1;
+    animation: loadingPoint 3s infinite ease-in-out;
+    animation-direction: alternate;
+}
+@keyframes loadingPoint {
+    0%   {opacity: 0;}
+    100% {opacity: 1;}
+}
+.loaderLine {
+    /*This controls the stroke animation on the loading line.*/
+    opacity: 0;
+    stroke-dasharray: 5;
+    animation: loadingLine 3s infinite ease-in-out;
+    animation-direction: alternate;
+}
+@keyframes loadingLine {
+    0%   {opacity: 0.5; stroke-dashoffset: 0;}
+    33%   {opacity: 1; }
+    66%   {opacity: 0.5; }
+    100% {opacity: 1; stroke-dashoffset: 100;}
+}
+.logo {
+    /*This controls the stroke animation on the logo.*/
+    transition: transform .3s ease-in-out;
+}
+.logo:active {
+    transform: rotateY(360deg);
+}
+.logoLetter {
+    /*This controls the letter animation on the logo.*/
+    transition: all .1s ease-in-out;
+}
+.logoLetter:hover {
+    transform: rotate(-2deg);
 }
 
-.App-link {
-  color: #61dafb;
+.compareCard{
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 120px;
+    text-align: center;
+    user-select: none;
+    transition: all .1s ease-in; 
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.textCentred{/*this keeps the order in the Weather Cards*/
+    padding: 20px 25px 0px 0px;
+    text-align: center;
 }
+/*these are self explanatory, changing sizes and crusors on hover*/
+.crusorHand:hover {cursor: pointer;}
+.grow { transition: all .15s ease-out; }
+.grow:hover { transform: scale(1.1); }
+.grow:active { transform: scale(1.2); }
