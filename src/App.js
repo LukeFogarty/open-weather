@@ -19,7 +19,7 @@ const value = { weather, setWeather, notFound, setNotFound};
     <WeatherContext.Provider value={value}>
       {/* The logo, is a little interactable*/}
       <LogoDisplay/>
-      <b style={{"color":"#000000", "fontWeight": "400" }}>ediflo<b style={{"color":"#dad9d9"}}>weather</b></b>
+      <b style={{"color":"#000000", "fontWeight": "400" }}>open<b style={{"color":"#dad9d9"}}>weather</b></b>
       {/* This is an error message letting you know if the city isnt in the database*/}
       <sup style={{"color":"#dad9d9", "fontSize": "12pt" }}>{notFound}</sup>
       <SearchWeatherByCity/><br/> 

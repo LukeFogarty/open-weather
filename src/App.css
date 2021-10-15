@@ -143,12 +143,12 @@ button:disabled{/*What happens to a button when disabled*/
 .logo:active {
     transform: rotateY(360deg);
 }
-.logoLetter {
+.logoCloud {
     /*This controls the letter animation on the logo.*/
     transition: all .1s ease-in-out;
 }
-.logoLetter:hover {
-    transform: rotate(-2deg);
+.logoCloud:hover {
+    fill-opacity: 0;
 }
 
 .compareCard{
