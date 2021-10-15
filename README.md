@@ -1,4 +1,4 @@
-# Open-Weather Ediflo Test
+# Open-Weather Comparer
 
 This small application gets a user's location and a user-supplied city and displays general differeneces in the weather.
 Here is a live link:
